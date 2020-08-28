@@ -9,29 +9,35 @@ import bobby.irawan.ministockbit.domain.model.CryptoModel
 import bobby.irawan.ministockbit.domain.model.CryptoRequest
 import bobby.irawan.ministockbit.domain.usecase.GetCryptoUseCase
 import bobby.irawan.ministockbit.presentation.base.BaseViewModel
-import bobby.irawan.ministockbit.presentation.utils.UserManager
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class WatchListViewModel(
-    private val getCryptoUseCase: GetCryptoUseCase,
-    private val userManager: UserManager
+    private val getCryptoUseCase: GetCryptoUseCase
 ) : BaseViewModel() {
 
     private var isLoading = false
     private var page = 1
-    private var cryptoList: MutableList<CryptoModel> = mutableListOf()
+    var cryptoList: MutableList<CryptoModel> = mutableListOf()
+        private set
 
     private var _cryptoData = MutableLiveData<SimpleResult<List<CryptoModel>>>(Result.State.Loading)
     val cryptoData = _cryptoData as LiveData<SimpleResult<List<CryptoModel>>>
 
     fun getCryptoData(isRefresh: Boolean = false) {
         viewModelScope.launch {
-            if (isRefresh) page = 1
+            if (isRefresh) onRefreshSetting()
             val request = CryptoRequest(page)
             val result = getCryptoUseCase.execute(request)
+            delay(1200)
             _cryptoData.postValue(result)
             isLoading = false
         }
+    }
+
+    private fun onRefreshSetting() {
+        page = 1
+        cryptoList = mutableListOf()
     }
 
     fun fetchNextPage() {
@@ -41,16 +47,8 @@ class WatchListViewModel(
         }
     }
 
-    fun onUpdatePageNumber(isRefresh: Boolean) {
-        if (!isRefresh) {
-            page++
-        } else {
-            page = 1
-        }
-    }
-
-    fun onSignOutUser() {
-        userManager.endUserSession()
+    fun onUpdatePageNumber() {
+        page++
     }
 
 }

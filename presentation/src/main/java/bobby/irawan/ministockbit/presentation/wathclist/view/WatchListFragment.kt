@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import bobby.irawan.ministockbit.domain.common.Result
 import bobby.irawan.ministockbit.domain.common.SimpleResult
@@ -28,7 +26,7 @@ class WatchListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setHasOptionsMenu(true)
+//        setHasOptionsMenu(true)
         _binding = FragmentWatchListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -66,33 +64,38 @@ class WatchListFragment : Fragment() {
         result.handleResult(
             { data ->
                 stopShimmer()
-                binding.progressBarLoadMore.hideSlideDown()
-                adapter.submitList(data)
-                val isRefreshState = binding.pullToRefresh.isRefreshing
-                viewModel.onUpdatePageNumber(isRefreshState)
-                binding.pullToRefresh.isRefreshing = false
+                viewModel.cryptoList.addAll(data)
+                adapter.submitList(viewModel.cryptoList)
+                viewModel.onUpdatePageNumber()
+                onFinishLoadData()
                 binding.recyclerViewCryptoData.setVisible()
             }, {
                 stopShimmer()
-                binding.progressBarLoadMore.hideSlideDown()
-                binding.pullToRefresh.isRefreshing = false
-                binding.textViewErrorMessage.setVisible()
+                onFinishLoadData()
             }, {
                 stopShimmer()
-                binding.progressBarLoadMore.hideSlideDown()
-                binding.pullToRefresh.isRefreshing = false
-                binding.textViewErrorMessage.setVisible()
                 showErrorSnackbar(it.errorMessage)
+                onFinishLoadData()
             }
         ) { state ->
             when (state) {
                 Result.State.Loading -> {
-                    startShimmer()
-                    binding.textViewErrorMessage.setGone()
-                    binding.recyclerViewCryptoData.setGone()
+                    onLoadData()
                 }
             }
         }
+    }
+
+    private fun onFinishLoadData() {
+        binding.progressBarLoadMore.hideSlideDown()
+        binding.pullToRefresh.isRefreshing = false
+        binding.textViewErrorMessage.showIf { viewModel.cryptoList.isNullOrEmpty() }
+    }
+
+    private fun onLoadData() {
+        startShimmer()
+        binding.textViewErrorMessage.setGone()
+        binding.recyclerViewCryptoData.setGone()
     }
 
     private fun stopShimmer() {
@@ -123,20 +126,6 @@ class WatchListFragment : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.home_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.sign_out) {
-            viewModel.onSignOutUser()
-            val action =
-                WatchListFragmentDirections.actionWatchListFragmentToLoginFragment()
-            findNavController().navigate(action)
-            return true
-        }
-        return NavigationUI.onNavDestinationSelected(
-            item,
-            findNavController()
-        ) || super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {

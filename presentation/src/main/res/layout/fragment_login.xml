@@ -64,7 +64,8 @@
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,10 +127,10 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="16dp"
             android:text="@string/label_register_now"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/button_login_fingerprint"
             app:layout_constraintStart_toStartOf="@+id/button_login_fingerprint"
-            app:layout_constraintTop_toBottomOf="@id/button_login_fingerprint"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/button_login_fingerprint" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

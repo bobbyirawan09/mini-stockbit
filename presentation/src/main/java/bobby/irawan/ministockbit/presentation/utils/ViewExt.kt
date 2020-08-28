@@ -34,6 +34,11 @@ fun View.setVisible() {
     this.visibility = View.VISIBLE
 }
 
+fun View.showIf(condition : () -> Boolean) {
+    if (condition.invoke()) setVisible()
+    else setGone()
+}
+
 fun View.setGone() {
     this.visibility = View.GONE
 }
