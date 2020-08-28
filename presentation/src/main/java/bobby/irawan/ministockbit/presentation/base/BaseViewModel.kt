@@ -9,24 +9,27 @@ import bobby.irawan.ministockbit.domain.common.SimpleResult
 /**
  * Created by bobbyirawan09 on 26/08/20.
  */
-abstract class BaseViewModel: ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
-    protected val snackbarMessage = MutableLiveData<String>()
-    fun snackbarMessage() = snackbarMessage as LiveData<String>
+    protected val snackbar = MutableLiveData<String>()
+    fun snackbarMessage() = snackbar as LiveData<String>
 
-    protected val pageLoading = MutableLiveData<Boolean>()
-    fun pageLoading() = pageLoading as LiveData<Boolean>
+    protected val successSnackbar = MutableLiveData<String>()
+    fun successSnackbar() = successSnackbar as LiveData<String>
+
+    protected val errorSnackbar = MutableLiveData<String>()
+    fun errorSnackbar() = errorSnackbar as LiveData<String>
 
     protected fun postSnackbar(message: String) {
-        snackbarMessage.postValue(message)
+        snackbar.postValue(message)
     }
 
-    protected fun setSnackbar(message: String) {
-        snackbarMessage.value = message
+    protected fun postSuccessSnackbar(message: String) {
+        successSnackbar.postValue(message)
     }
 
-    protected fun postLoading(show: Boolean) {
-        pageLoading.postValue(show)
+    protected fun postErrorSnackbar(message: String) {
+        errorSnackbar.postValue(message)
     }
 
     protected inline fun <T> SimpleResult<T>.handleSimpleResult(

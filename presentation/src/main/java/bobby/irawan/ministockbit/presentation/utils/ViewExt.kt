@@ -7,6 +7,7 @@ import android.view.animation.TranslateAnimation
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import bobby.irawan.ministockbit.presentation.R
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * Created by bobbyirawan09 on 26/08/20.
@@ -62,3 +63,18 @@ fun View.hideSlideDown() {
         setGone()
     }
 }
+
+fun View.showErrorSnackbar(message: String) {
+    val snackbar = Snackbar.make(this, message, Snackbar.LENGTH_LONG)
+    snackbar.setBackgroundTint(ContextCompat.getColor(this.context, R.color.redDanger))
+    snackbar.show()
+}
+
+
+fun View.showSuccessSnackbar(message: String) {
+    val snackbar = Snackbar.make(this, message, Snackbar.LENGTH_LONG)
+    snackbar.setBackgroundTint(ContextCompat.getColor(this.context, R.color.green))
+    snackbar.show()
+}
+
+fun Double?.orZero() = this ?: 0.0

@@ -1,8 +1,6 @@
 package bobby.irawan.ministockbit.data.mapper
 
-import bobby.irawan.ministockbit.data.model.CryptoResponse
 import bobby.irawan.ministockbit.data.model.WebSocketResponse
-import bobby.irawan.ministockbit.domain.model.CryptoModel
 import bobby.irawan.ministockbit.domain.model.WebSocketModel
 
 /**

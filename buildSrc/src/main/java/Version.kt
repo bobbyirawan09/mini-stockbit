@@ -11,7 +11,6 @@ object Version {
     const val versionName = "1.0"
 
     // Libraries
-    const val supportLib = "28.0.0"
     const val recyclerView = "1.1.0"
     const val androidx = "1.3.1"
     const val constraintLayout = "1.1.3"
@@ -38,7 +37,7 @@ object Version {
     const val runner = "1.1.0"
     const val coroutine = "1.3.7"
     const val swipeRefresh = "1.1.0"
-    const val navigation="2.3.0"
+    const val navigation = "2.3.0"
     const val shimmer = "0.5.0"
     const val formValidator = "0.5.2"
     const val scarlet = "0.2.5-SNAPSHOT"

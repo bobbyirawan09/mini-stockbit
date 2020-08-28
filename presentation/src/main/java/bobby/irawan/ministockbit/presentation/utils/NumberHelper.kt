@@ -1,8 +1,6 @@
 package bobby.irawan.ministockbit.presentation.utils
 
 import java.text.DecimalFormat
-import java.text.NumberFormat
-import java.util.*
 
 /**
  * Created by bobbyirawan09 on 26/08/20.

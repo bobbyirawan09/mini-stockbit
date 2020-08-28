@@ -1,8 +1,8 @@
 package bobby.irawan.ministockbit.di
 
 import bobby.irawan.ministockbit.BuildConfig.*
-import bobby.irawan.ministockbit.data.common.RetrofitFactory
-import bobby.irawan.ministockbit.data.common.ScarletFactory
+import bobby.irawan.ministockbit.data.service.RetrofitFactory
+import bobby.irawan.ministockbit.data.service.ScarletFactory
 import org.koin.dsl.module
 
 /**

@@ -1,7 +1,6 @@
 package bobby.irawan.ministockbit.data.model
 
 import com.google.gson.annotations.SerializedName
-import com.sun.org.apache.xpath.internal.operations.Bool
 
 /**
  * Created by bobbyirawan09 on 26/08/20.

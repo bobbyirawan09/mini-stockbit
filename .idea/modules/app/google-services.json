@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "973633290267",
+    "firebase_url": "https://ministockbit.firebaseio.com",
+    "project_id": "ministockbit",
+    "storage_bucket": "ministockbit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973633290267:android:f5294356d0a552b833f8be",
+        "android_client_info": {
+          "package_name": "bobby.irawan.ministockbit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973633290267-30snjt54uhjg6jvpje6ce7l5ai65n1uf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bobby.irawan.ministockbit",
+            "certificate_hash": "8685a9dc4eb33395947fa3c13a7ca46c61689782"
+          }
+        },
+        {
+          "client_id": "973633290267-rf6v7msfj3653e7iqgjfjial30nnu21i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74OxhbN9_wInE46F-8hYM5v9xB3u5bvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973633290267-rf6v7msfj3653e7iqgjfjial30nnu21i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package bobby.irawan.ministockbit.presentation.datafeed
+package bobby.irawan.ministockbit.presentation.datafeed.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData

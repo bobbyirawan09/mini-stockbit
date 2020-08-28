@@ -6,16 +6,17 @@ import bobby.irawan.ministockbit.presentation.base.BaseViewModel
 import bobby.irawan.ministockbit.presentation.utils.Constants.LoginFlow
 import bobby.irawan.ministockbit.presentation.utils.UserManager
 
-class LoginViewModel(private val userManager: UserManager) : BaseViewModel() {
+class LoginViewModel(private val userManager: UserManager) :
+    BaseViewModel() {
 
     private var _loginFlow = MutableLiveData<LoginFlow>()
     val loginFlow = _loginFlow as LiveData<LoginFlow>
 
     init {
-        checkIsLogin()
+        onCheckUserAuth()
     }
 
-    private fun checkIsLogin() {
+    private fun onCheckUserAuth() {
         if (userManager.isSessionActive()) {
             navigate(LoginFlow.HomePage)
         } else {
@@ -28,8 +29,10 @@ class LoginViewModel(private val userManager: UserManager) : BaseViewModel() {
         _loginFlow.postValue(flow)
     }
 
-    fun onSaveDataLogin(email: String) {
+    fun onUserLogin(email: String) {
         userManager.startUserSession()
-        userManager.email = email
+        userManager.email = email.orEmpty()
+        postSuccessSnackbar("Success login")
+        navigate(LoginFlow.HomePage)
     }
 }

@@ -1,11 +1,10 @@
-package bobby.irawan.ministockbit.data.remote
+package bobby.irawan.ministockbit.data.service
 
 import bobby.irawan.ministockbit.data.model.Subscription
 import bobby.irawan.ministockbit.data.model.WebSocketResponse
 import com.tinder.scarlet.websocket.WebSocketEvent
 import com.tinder.scarlet.ws.Receive
 import com.tinder.scarlet.ws.Send
-import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.Flow
 
 /**

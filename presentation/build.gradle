@@ -3,7 +3,6 @@ import dependencies.*
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
 // Applying dependencies from dependencies.gradle
 apply from: Dependencies.dependency
 apply plugin: "androidx.navigation.safeargs.kotlin"
@@ -39,10 +38,4 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-
-dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 }

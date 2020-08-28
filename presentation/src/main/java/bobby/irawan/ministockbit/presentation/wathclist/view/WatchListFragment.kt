@@ -1,8 +1,7 @@
-package bobby.irawan.ministockbit.presentation.wathclist
+package bobby.irawan.ministockbit.presentation.wathclist.view
 
 import android.os.Bundle
 import android.view.*
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
@@ -13,13 +12,9 @@ import bobby.irawan.ministockbit.domain.common.SimpleResult
 import bobby.irawan.ministockbit.domain.model.CryptoModel
 import bobby.irawan.ministockbit.presentation.R
 import bobby.irawan.ministockbit.presentation.databinding.FragmentWatchListBinding
-import bobby.irawan.ministockbit.presentation.utils.hideSlideDown
-import bobby.irawan.ministockbit.presentation.utils.setGone
-import bobby.irawan.ministockbit.presentation.utils.setVisible
-import bobby.irawan.ministockbit.presentation.utils.showSlideUp
+import bobby.irawan.ministockbit.presentation.utils.*
 import bobby.irawan.ministockbit.presentation.wathclist.adapter.WatchListAdapter
 import bobby.irawan.ministockbit.presentation.wathclist.viewmodel.WatchListViewModel
-import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WatchListFragment : Fragment() {
@@ -87,7 +82,7 @@ class WatchListFragment : Fragment() {
                 binding.progressBarLoadMore.hideSlideDown()
                 binding.pullToRefresh.isRefreshing = false
                 binding.textViewErrorMessage.setVisible()
-                showSnackbar(it.errorMessage)
+                showErrorSnackbar(it.errorMessage)
             }
         ) { state ->
             when (state) {
@@ -112,6 +107,7 @@ class WatchListFragment : Fragment() {
 
     private fun setUpListener() {
         binding.pullToRefresh.setOnRefreshListener {
+            binding.textViewErrorMessage.setGone()
             binding.recyclerViewCryptoData.setGone()
             startShimmer()
             adapter.submitList(null)
@@ -119,10 +115,9 @@ class WatchListFragment : Fragment() {
         }
     }
 
-    private fun showSnackbar(message: String) {
-        val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG)
-        snackbar.setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.redDanger))
-        snackbar.show()
+    private fun showErrorSnackbar(message: String) {
+        val view = requireActivity().findViewById(android.R.id.content) as View
+        view.showErrorSnackbar(message)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -133,13 +128,15 @@ class WatchListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.sign_out) {
             viewModel.onSignOutUser()
-            val action = WatchListFragmentDirections.actionWatchListFragmentToLoginFragment()
+            val action =
+                WatchListFragmentDirections.actionWatchListFragmentToLoginFragment()
             findNavController().navigate(action)
             return true
         }
-        return NavigationUI.onNavDestinationSelected(item,
-            findNavController())
-                || super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            findNavController()
+        ) || super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {

@@ -1,6 +1,6 @@
-package bobby.irawan.ministockbit.data.common
+package bobby.irawan.ministockbit.data.service
 
-import bobby.irawan.ministockbit.data.interceptor.ApiKeyInterceptor
+import bobby.irawan.ministockbit.data.service.interceptor.ApiKeyInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,14 +13,22 @@ object RetrofitFactory {
     fun create(baseUrl: String, apiKey: String): Retrofit {
         return Retrofit.Builder().baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(createOkHttp(apiKey))
+            .client(
+                createOkHttp(
+                    apiKey
+                )
+            )
             .build()
     }
 
     private fun createOkHttp(apiKey: String): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor())
-            .addInterceptor(apiKeyInterceptor(apiKey))
+            .addInterceptor(
+                apiKeyInterceptor(
+                    apiKey
+                )
+            )
             .connectTimeout(30, TimeUnit.SECONDS)
             .callTimeout(30, TimeUnit.SECONDS)
             .build()

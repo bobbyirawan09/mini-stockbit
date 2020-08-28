@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="bobby.irawan.ministockbit.presentation.login.LoginFragment"
+        android:name="bobby.irawan.ministockbit.presentation.login.view.LoginFragment"
         android:label="Fragment Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/watchListFragment"
-        android:name="bobby.irawan.ministockbit.presentation.wathclist.WatchListFragment"
+        android:name="bobby.irawan.ministockbit.presentation.wathclist.view.WatchListFragment"
         android:label="Fragment Watch List"
         tools:layout="@layout/fragment_watch_list">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/dataFeedFragment"
-        android:name="bobby.irawan.ministockbit.presentation.datafeed.DataFeedFragment"
+        android:name="bobby.irawan.ministockbit.presentation.datafeed.view.DataFeedFragment"
         android:label="fragment_data_feed"
         tools:layout="@layout/fragment_data_feed" />
 

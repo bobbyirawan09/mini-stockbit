@@ -1,4 +1,4 @@
-package bobby.irawan.ministockbit.data.common
+package bobby.irawan.ministockbit.data.service
 
 import com.tinder.scarlet.Stream
 import com.tinder.scarlet.StreamAdapter

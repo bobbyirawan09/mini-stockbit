@@ -1,6 +1,4 @@
-package bobby.irawan.ministockbit.domain.base
-
-import bobby.irawan.ministockbit.domain.common.SimpleResult
+package bobby.irawan.ministockbit.domain.common
 
 /**
  * Created by bobbyirawan09 on 26/08/20.

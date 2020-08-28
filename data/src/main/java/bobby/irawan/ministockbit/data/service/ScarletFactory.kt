@@ -1,6 +1,6 @@
-package bobby.irawan.ministockbit.data.common
+package bobby.irawan.ministockbit.data.service
 
-import bobby.irawan.ministockbit.data.interceptor.ApiKeyInterceptor
+import bobby.irawan.ministockbit.data.service.interceptor.ApiKeyInterceptor
 import com.tinder.scarlet.Scarlet
 import com.tinder.scarlet.messageadapter.gson.GsonMessageAdapter
 import com.tinder.scarlet.retry.ExponentialWithJitterBackoffStrategy
@@ -20,14 +20,17 @@ object ScarletFactory {
 
     fun create(baseUrl: String, apiKey: String): Scarlet {
         return Scarlet(
-            OkHttpWebSocket(httpClient(), OkHttpWebSocket.SimpleRequestFactory(
-                {
-                    Request.Builder()
-                        .url(baseUrl + "?api_key=0377b645534d613665813aec1f9d5afa4980955e898e15d095f343274673fe1d")
-                        .build()
-                },
-                { ShutdownReason.GRACEFUL }
-            )),
+            OkHttpWebSocket(
+                httpClient(
+                    apiKey
+                ), OkHttpWebSocket.SimpleRequestFactory(
+                    {
+                        Request.Builder()
+                            .url(baseUrl)
+                            .build()
+                    },
+                    { ShutdownReason.GRACEFUL }
+                )),
             Scarlet.Configuration(
                 backoffStrategy = backoffStrategy,
                 messageAdapterFactories = listOf(GsonMessageAdapter.Factory()),
@@ -36,8 +39,13 @@ object ScarletFactory {
         )
     }
 
-    private fun httpClient(): OkHttpClient {
+    private fun httpClient(apiKey: String): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(
+                apiKeyInterceptor(
+                    apiKey
+                )
+            )
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)

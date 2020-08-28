@@ -1,11 +1,10 @@
 package bobby.irawan.ministockbit.domain.di
 
-import bobby.irawan.ministockbit.data.remote.CryptoAPI
 import bobby.irawan.ministockbit.data.CryptoRepositoryImpl
 import bobby.irawan.ministockbit.data.mapper.CryptoMapper
-import bobby.irawan.ministockbit.data.mapper.Mapper
 import bobby.irawan.ministockbit.data.mapper.WebSocketMapper
-import bobby.irawan.ministockbit.data.remote.WebSocketApi
+import bobby.irawan.ministockbit.data.service.CryptoAPI
+import bobby.irawan.ministockbit.data.service.WebSocketApi
 import bobby.irawan.ministockbit.domain.repository.CryptoRepository
 import com.tinder.scarlet.Scarlet
 import org.koin.dsl.module

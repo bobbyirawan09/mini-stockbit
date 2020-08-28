@@ -1,8 +1,8 @@
-package bobby.irawan.ministockbit.data.remote
+package bobby.irawan.ministockbit.data.service
 
-import bobby.irawan.ministockbit.data.Constants.QUERY_PARAM_LIMIT
-import bobby.irawan.ministockbit.data.Constants.QUERY_PARAM_PAGE
-import bobby.irawan.ministockbit.data.Constants.QUERY_PARAM_TSYM
+import bobby.irawan.ministockbit.data.common.Constants.QUERY_PARAM_LIMIT
+import bobby.irawan.ministockbit.data.common.Constants.QUERY_PARAM_PAGE
+import bobby.irawan.ministockbit.data.common.Constants.QUERY_PARAM_TSYM
 import bobby.irawan.ministockbit.data.common.SimpleResponse
 import bobby.irawan.ministockbit.data.model.CryptoResponse
 import retrofit2.http.GET

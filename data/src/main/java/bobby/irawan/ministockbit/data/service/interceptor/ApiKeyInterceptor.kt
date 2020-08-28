@@ -1,6 +1,6 @@
-package bobby.irawan.ministockbit.data.interceptor
+package bobby.irawan.ministockbit.data.service.interceptor
 
-import bobby.irawan.ministockbit.data.Constants.QUERY_PARAM_API_KEY
+import bobby.irawan.ministockbit.data.common.Constants.QUERY_PARAM_API_KEY
 import okhttp3.Interceptor
 import okhttp3.Response
 

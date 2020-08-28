@@ -1,7 +1,6 @@
 package bobby.irawan.ministockbit.data.common
 
 import bobby.irawan.ministockbit.data.model.BaseResponse
-import kotlinx.coroutines.channels.ReceiveChannel
 import retrofit2.Response
 
 /**

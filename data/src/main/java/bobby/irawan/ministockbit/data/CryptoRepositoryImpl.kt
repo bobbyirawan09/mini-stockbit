@@ -1,11 +1,12 @@
 package bobby.irawan.ministockbit.data
 
+import bobby.irawan.ministockbit.data.common.Constants.WEB_SOCKET_SUBSCRIBE_MODEL
 import bobby.irawan.ministockbit.data.common.mapToResult
 import bobby.irawan.ministockbit.data.mapper.CryptoMapper
 import bobby.irawan.ministockbit.data.mapper.WebSocketMapper
 import bobby.irawan.ministockbit.data.model.Subscription
-import bobby.irawan.ministockbit.data.remote.CryptoAPI
-import bobby.irawan.ministockbit.data.remote.WebSocketApi
+import bobby.irawan.ministockbit.data.service.CryptoAPI
+import bobby.irawan.ministockbit.data.service.WebSocketApi
 import bobby.irawan.ministockbit.domain.common.Result
 import bobby.irawan.ministockbit.domain.common.SimpleError
 import bobby.irawan.ministockbit.domain.common.SimpleResult
@@ -20,11 +21,9 @@ class CryptoRepositoryImpl(
     private val api: CryptoAPI,
     private val cryptoMapper: CryptoMapper,
     private val webSocketMapper: WebSocketMapper,
-    private val websocket: WebSocketApi
+    private val webSocket: WebSocketApi
 ) :
     CryptoRepository {
-
-    private val WEB_SOCKET_SUBSCRIBE_MODEL = Subscription("SubAdd", listOf("21~BTC", "21~ETH"))
 
     override suspend fun getCryptoData(param: CryptoRequest): SimpleResult<List<CryptoModel>> {
         return try {
@@ -36,8 +35,8 @@ class CryptoRepositoryImpl(
 
     @ExperimentalCoroutinesApi
     override suspend fun getWebSocketData() = flow {
-        websocket.subscribe(WEB_SOCKET_SUBSCRIBE_MODEL)
-        websocket.observeResponse().collect { response ->
+        webSocket.subscribe(WEB_SOCKET_SUBSCRIBE_MODEL)
+        webSocket.observeResponse().collect { response ->
             emit(webSocketMapper.mapFromResponse(response))
         }
     }

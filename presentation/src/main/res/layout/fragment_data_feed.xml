@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="12dp"
-    tools:context=".datafeed.DataFeedFragment">
+    tools:context=".datafeed.view.DataFeedFragment">
 
     <TextView
         android:id="@+id/text_view_code_btc"

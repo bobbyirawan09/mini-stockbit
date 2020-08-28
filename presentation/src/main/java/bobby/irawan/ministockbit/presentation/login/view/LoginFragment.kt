@@ -1,4 +1,4 @@
-package bobby.irawan.ministockbit.presentation.login
+package bobby.irawan.ministockbit.presentation.login.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
                 }
                 submitWith(R.id.button_login) {
                     if (it.success()) {
-                        viewModel.onSaveDataLogin(editTextEmail.text.toString())
+                        viewModel.onUserLogin(editTextEmail.text.toString())
                         navigateToWatchList()
                     }
                 }
@@ -63,18 +63,14 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToWatchList() {
-        val action = LoginFragmentDirections.actionLoginFragmentToWatchListFragment()
+        val action =
+            LoginFragmentDirections.actionLoginFragmentToWatchListFragment()
         findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        fun newInstance() =
-            LoginFragment()
     }
 
 }
