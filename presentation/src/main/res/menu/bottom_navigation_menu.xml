@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/watchListFragment"
+        android:icon="@drawable/ic_baseline_star_border"
+        android:title="@string/watch_list_label"/>
+    <item
+        android:id="@+id/dataFeedFragment"
+        android:icon="@drawable/ic_baseline_list"
+        android:title="@string/data_feed_label"/>
+</menu>

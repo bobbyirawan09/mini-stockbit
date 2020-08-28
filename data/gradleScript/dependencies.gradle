@@ -1,0 +1,36 @@
+import dependencies.Dependencies
+
+dependencies {
+
+    //Modules
+    implementation project(Dependencies.Module.domain)
+
+    //Unit Testing
+    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.test_junit
+
+    //Coroutine
+    implementation Dependencies.Coroutine.coroutine
+
+    //Retrofit
+    api Dependencies.Retrofit2.retrofit
+    api Dependencies.Retrofit2.converterGson
+
+    //OkHttp3
+    api Dependencies.OkHttp3.loggingInterceptor
+    api Dependencies.OkHttp3.okHttp3
+
+    //Koin
+    implementation Dependencies.Koin.koin
+
+    //Gson
+    implementation Dependencies.Gson.gson
+
+    //Scarlet
+    implementation Dependencies.Scarlet.scarlet
+    implementation Dependencies.Scarlet.messageAdapter
+    implementation Dependencies.Scarlet.streamAdapter
+    implementation Dependencies.Scarlet.websocket
+    implementation Dependencies.Scarlet.lifecycle
+
+}

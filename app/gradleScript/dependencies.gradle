@@ -1,0 +1,25 @@
+import dependencies.*
+
+apply from: Dependencies.common
+
+dependencies {
+
+    //App Module
+    implementation project(Dependencies.Module.domain)
+    implementation project(Dependencies.Module.data)
+    implementation project(Dependencies.Module.presentaion)
+
+    //Koin
+    implementation Dependencies.Koin.koin
+
+    //Android X
+    implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.AndroidX.materialDesign
+    implementation Dependencies.AndroidX.legacySupport
+
+    //Scarlet
+    implementation Dependencies.Scarlet.scarlet
+
+    //Timber
+    implementation Dependencies.Timber.timber
+}

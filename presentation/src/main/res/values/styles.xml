@@ -1,0 +1,59 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Body1" parent="AppTheme">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Body1.Medium" parent="AppTheme">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Body1.Bold" parent="Body1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Body2" parent="AppTheme">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Body2.Grey" parent="Body2">
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Body2.Bold" parent="Body2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Body2.Red" parent="Body2">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Body2.Green" parent="Body2">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="Body2.Green.Bold" parent="Body2.Green">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Small.Body1.Red" parent="AppTheme">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="Small.Body2.Red" parent="AppTheme">
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+</resources>

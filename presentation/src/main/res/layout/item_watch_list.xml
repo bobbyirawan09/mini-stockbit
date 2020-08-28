@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="12dp">
+
+    <TextView
+        android:id="@+id/text_view_code"
+        style="@style/Body1.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="AALI" />
+
+    <TextView
+        android:id="@+id/text_view_price"
+        style="@style/Body1.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="9,050" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_suspended"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_code"
+        app:layout_constraintStart_toEndOf="@+id/text_view_code"
+        app:layout_constraintTop_toTopOf="@+id/text_view_code" />
+
+    <TextView
+        android:id="@+id/text_view_company_name"
+        style="@style/Body2.Grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_code"
+        tools:text="Astra Argo Lestari Tbk." />
+
+    <TextView
+        android:id="@+id/text_view_price_change"
+        style="@style/Body2.Grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_price"
+        tools:text="+200(+2.26%)" />
+</androidx.constraintlayout.widget.ConstraintLayout>

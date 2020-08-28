@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tinder.statemachine:statemachine:0.2.0@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinder.statemachine/statemachine/0.2.0/2d870d7a502f87c2c981cc714a2f8ab3436cd5b7/statemachine-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinder.statemachine/statemachine/0.2.0/b589e0288ac5fde2362a6e4911483962e1239689/statemachine-0.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinder.statemachine/statemachine/0.2.0/b2fc74db83d4f01a5f2ec5eace5b029199bed518/statemachine-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

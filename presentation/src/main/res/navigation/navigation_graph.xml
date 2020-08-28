@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="bobby.irawan.ministockbit.presentation.login.LoginFragment"
+        android:label="Fragment Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_watchListFragment"
+            app:destination="@id/watchListFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchListFragment"
+        android:name="bobby.irawan.ministockbit.presentation.wathclist.WatchListFragment"
+        android:label="Fragment Watch List"
+        tools:layout="@layout/fragment_watch_list">
+        <action
+            android:id="@+id/action_watchListFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/watchListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataFeedFragment"
+        android:name="bobby.irawan.ministockbit.presentation.datafeed.DataFeedFragment"
+        android:label="fragment_data_feed"
+        tools:layout="@layout/fragment_data_feed" />
+
+</navigation>

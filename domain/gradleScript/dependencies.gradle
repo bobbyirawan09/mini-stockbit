@@ -1,0 +1,14 @@
+import dependencies.Dependencies
+
+dependencies {
+
+    //Unit Testing
+    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.test_junit
+
+    //Koin
+    implementation Dependencies.Koin.koin
+
+    //Coroutine
+    implementation Dependencies.Coroutine.coroutine
+}

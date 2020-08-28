@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: lifecycle-android-0.2.5-SNAPSHOT">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinder.scarlet/lifecycle-android/0.2.5-SNAPSHOT/ee94b145adf0e80377c0b43ff6cc4cfba7263688/lifecycle-android-0.2.5-SNAPSHOT.aar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tinder.scarlet/lifecycle-android/0.2.5-SNAPSHOT/8f520fb827a24a2ae2953a1268cff63c2225febc/lifecycle-android-0.2.5-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: koin-androidx-viewmodel-2.1.6">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-viewmodel/2.1.6/1eb338f95ebccbb0cdfa918fd40fad1edfad6b3a/koin-androidx-viewmodel-2.1.6.aar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.koin/koin-androidx-viewmodel/2.1.6/faacee971c35a03ddfed0b0609308befbe00f3c4/koin-androidx-viewmodel-2.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

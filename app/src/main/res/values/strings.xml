@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MiniStockbit</string>
+    <string name="facebook_title">Facebook</string>
+    <string name="google_title">Google</string>
+    <string name="no_available_information">No available information</string>
+    <string name="error_message_load_data">Problem occurred because of : %s</string>
+    <string name="label_or">Atau</string>
+    <string name="label_login_fingerprint">Log in with Fingerprint</string>
+    <string name="label_login">Login</string>
+    <string name="label_forgot_password">Forgot Password</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_username_or_email">Username or Email</string>
+    <string name="label_register_now">Don\'t have an account yet?  <font color='#00AB6D'>Register Now</font></string>
+    <string name="label_suspended">Suspended</string>
+</resources>

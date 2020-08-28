@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: kotlinx-coroutines-reactive-1.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.3.2/898d7aeb457d8b640912c43fcd8b511f17d3a62a/kotlinx-coroutines-reactive-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.3.2/3899c038a8758f7e61a3b9933427cd236cb4e15/kotlinx-coroutines-reactive-1.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
