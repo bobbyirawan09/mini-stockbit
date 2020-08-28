@@ -9,12 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import bobby.irawan.ministockbit.presentation.R
-import bobby.irawan.ministockbit.presentation.main.MainActivity
 import bobby.irawan.ministockbit.presentation.databinding.FragmentLoginBinding
 import bobby.irawan.ministockbit.presentation.login.viewmodel.LoginViewModel
+import bobby.irawan.ministockbit.presentation.main.MainActivity
 import bobby.irawan.ministockbit.presentation.utils.Constants.LoginFlow.HomePage
 import bobby.irawan.ministockbit.presentation.utils.ValidationHelper.assertEmail
 import bobby.irawan.ministockbit.presentation.utils.ValidationHelper.assertNotEmpty
+import bobby.irawan.ministockbit.presentation.utils.showErrorSnackbar
+import bobby.irawan.ministockbit.presentation.utils.showSuccessSnackbar
 import com.afollestad.vvalidator.form
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -64,12 +66,18 @@ class LoginFragment : Fragment() {
                 HomePage -> navigateToWatchList()
             }
         }
+        viewModel.successSnackbar().observe(viewLifecycleOwner) { message ->
+            val view = requireActivity().findViewById(android.R.id.content) as View
+            view.showSuccessSnackbar(message)
+        }
     }
 
     private fun navigateToWatchList() {
         val action =
             LoginFragmentDirections.actionLoginFragmentToWatchListFragment()
-        findNavController().navigate(action)
+        if (findNavController().currentDestination?.id == R.id.loginFragment) {
+            findNavController().navigate(action)
+        }
     }
 
     override fun onAttach(context: Context) {
