@@ -2,22 +2,20 @@ package bobby.irawan.ministockbit.presentation.main
 
 import bobby.irawan.ministockbit.presentation.helper.BaseTest
 import bobby.irawan.ministockbit.presentation.helper.ObserverHelper
-import bobby.irawan.ministockbit.presentation.login.viewmodel.LoginViewModel
-import bobby.irawan.ministockbit.presentation.utils.Constants
 import bobby.irawan.ministockbit.presentation.utils.UserManager
-import io.mockk.*
+import io.mockk.Runs
+import io.mockk.every
 import io.mockk.impl.annotations.MockK
+import io.mockk.just
+import io.mockk.verifySequence
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Test
-
-import org.junit.Assert.*
-import org.mockito.ArgumentMatchers
 
 /**
  * Created by bobbyirawan09 on 29/08/20.
  */
 @ExperimentalCoroutinesApi
-class MainActivityViewModelTest: BaseTest() {
+class MainActivityViewModelTest : BaseTest() {
 
     @MockK(relaxUnitFun = true)
     private lateinit var mockUserManager: UserManager

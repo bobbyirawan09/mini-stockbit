@@ -4,7 +4,6 @@ import bobby.irawan.ministockbit.data.common.Constants.WEB_SOCKET_SUBSCRIBE_MODE
 import bobby.irawan.ministockbit.data.common.mapToResult
 import bobby.irawan.ministockbit.data.mapper.CryptoMapper
 import bobby.irawan.ministockbit.data.mapper.WebSocketMapper
-import bobby.irawan.ministockbit.data.model.Subscription
 import bobby.irawan.ministockbit.data.service.CryptoAPI
 import bobby.irawan.ministockbit.data.service.WebSocketApi
 import bobby.irawan.ministockbit.domain.common.Result
@@ -13,7 +12,6 @@ import bobby.irawan.ministockbit.domain.common.SimpleResult
 import bobby.irawan.ministockbit.domain.model.CryptoModel
 import bobby.irawan.ministockbit.domain.model.CryptoRequest
 import bobby.irawan.ministockbit.domain.repository.CryptoRepository
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 
@@ -33,7 +31,6 @@ class CryptoRepositoryImpl(
         }
     }
 
-    @ExperimentalCoroutinesApi
     override suspend fun getWebSocketData() = flow {
         webSocket.subscribe(WEB_SOCKET_SUBSCRIBE_MODEL)
         webSocket.observeResponse().collect { response ->
