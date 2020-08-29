@@ -1,4 +1,4 @@
-package bobby.irawan.ministockbit.presentation.main
+package bobby.irawan.ministockbit.presentation.main.view
 
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import bobby.irawan.ministockbit.presentation.R
 import bobby.irawan.ministockbit.presentation.databinding.ActivityMainBinding
+import bobby.irawan.ministockbit.presentation.main.viewmodel.MainActivityViewModel
 import bobby.irawan.ministockbit.presentation.utils.setGone
 import bobby.irawan.ministockbit.presentation.utils.setVisible
 import bobby.irawan.ministockbit.presentation.utils.showSuccessSnackbar

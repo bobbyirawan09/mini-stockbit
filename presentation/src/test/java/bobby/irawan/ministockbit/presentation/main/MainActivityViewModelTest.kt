@@ -2,6 +2,7 @@ package bobby.irawan.ministockbit.presentation.main
 
 import bobby.irawan.ministockbit.presentation.helper.BaseTest
 import bobby.irawan.ministockbit.presentation.helper.ObserverHelper
+import bobby.irawan.ministockbit.presentation.main.viewmodel.MainActivityViewModel
 import bobby.irawan.ministockbit.presentation.utils.UserManager
 import io.mockk.Runs
 import io.mockk.every
@@ -25,7 +26,10 @@ class MainActivityViewModelTest : BaseTest() {
     override fun setup() {
         super.setup()
         every { mockUserManager.endUserSession() } just Runs //Do nothing
-        viewModel = MainActivityViewModel(mockUserManager)
+        viewModel =
+            MainActivityViewModel(
+                mockUserManager
+            )
     }
 
     @Test

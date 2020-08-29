@@ -11,11 +11,10 @@ import androidx.navigation.fragment.findNavController
 import bobby.irawan.ministockbit.presentation.R
 import bobby.irawan.ministockbit.presentation.databinding.FragmentLoginBinding
 import bobby.irawan.ministockbit.presentation.login.viewmodel.LoginViewModel
-import bobby.irawan.ministockbit.presentation.main.MainActivity
+import bobby.irawan.ministockbit.presentation.main.view.MainActivity
 import bobby.irawan.ministockbit.presentation.utils.Constants.LoginFlow.HomePage
 import bobby.irawan.ministockbit.presentation.utils.ValidationHelper.assertEmail
 import bobby.irawan.ministockbit.presentation.utils.ValidationHelper.assertNotEmpty
-import bobby.irawan.ministockbit.presentation.utils.showErrorSnackbar
 import bobby.irawan.ministockbit.presentation.utils.showSuccessSnackbar
 import com.afollestad.vvalidator.form
 import org.koin.androidx.viewmodel.ext.android.viewModel

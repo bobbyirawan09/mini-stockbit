@@ -1,4 +1,4 @@
-package bobby.irawan.ministockbit.presentation.main
+package bobby.irawan.ministockbit.presentation.main.viewmodel
 
 import bobby.irawan.ministockbit.presentation.base.BaseViewModel
 import bobby.irawan.ministockbit.presentation.utils.UserManager

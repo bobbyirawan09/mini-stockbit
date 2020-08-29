@@ -1,14 +1,15 @@
 package bobby.irawan.ministockbit.presentation.wathclist.view
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
 import bobby.irawan.ministockbit.domain.common.Result
 import bobby.irawan.ministockbit.domain.common.SimpleResult
 import bobby.irawan.ministockbit.domain.model.CryptoModel
-import bobby.irawan.ministockbit.presentation.R
 import bobby.irawan.ministockbit.presentation.databinding.FragmentWatchListBinding
 import bobby.irawan.ministockbit.presentation.utils.*
 import bobby.irawan.ministockbit.presentation.wathclist.adapter.WatchListAdapter
@@ -26,7 +27,6 @@ class WatchListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        setHasOptionsMenu(true)
         _binding = FragmentWatchListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -121,11 +121,6 @@ class WatchListFragment : Fragment() {
     private fun showErrorSnackbar(message: String) {
         val view = requireActivity().findViewById(android.R.id.content) as View
         view.showErrorSnackbar(message)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.home_menu, menu)
     }
 
     override fun onDestroyView() {

@@ -19,8 +19,6 @@ class WatchListAdapter(
     private val onBottomReached: () -> Unit
 ) : ListAdapter<CryptoModel, RecyclerView.ViewHolder>(CryptoItemDiffCallback()) {
 
-    private var cryptoItem = mutableListOf<CryptoModel>()
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding =
             ItemWatchListBinding.inflate(LayoutInflater.from(parent.context), parent, false)

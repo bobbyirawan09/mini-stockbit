@@ -1,7 +1,7 @@
 package bobby.irawan.ministockbit.domain.di
 
 import android.content.SharedPreferences
-import bobby.irawan.ministockbit.presentation.main.MainActivityViewModel
+import bobby.irawan.ministockbit.presentation.main.viewmodel.MainActivityViewModel
 import bobby.irawan.ministockbit.presentation.datafeed.viewmodel.DataFeedViewModel
 import bobby.irawan.ministockbit.presentation.login.viewmodel.LoginViewModel
 import bobby.irawan.ministockbit.presentation.utils.Constants.SHARED_PREFERENCE_NAME
@@ -27,7 +27,9 @@ val presentationModule = module {
     }
 
     viewModel {
-        MainActivityViewModel(get())
+        MainActivityViewModel(
+            get()
+        )
     }
 
     viewModel {
