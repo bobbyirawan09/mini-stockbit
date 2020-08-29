@@ -1,6 +1,6 @@
 <p align="left">
   <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat"/></a>
-  <a href="https://github.com/hyuwah"><img alt="Profile" src="https://badgen.net/badge/icon/hyuwah?icon=github&label"/></a> 
+  <a href="https://github.com/bobbyirawan09"><img alt="Profile" src="https://badgen.net/badge/icon/bobbyirawan09?icon=github&label"/></a> 
 </p>
 
 Project to replicate Stockbit app, although its a mini size of that app. Some cool tech stack I'm using in this project is Scarlet, Modularization, Navigation Component, etc. Not to forget, I also adding Unit Test for each layer.
