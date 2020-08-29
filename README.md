@@ -39,3 +39,25 @@ Inspired by [Android Clean Architecture](https://github.com/happysingh23828/Andr
 I'm using CryptoCompare API to get the data both API and WebSocket. Click link below
 - [x] [REST API](https://min-api.cryptocompare.com/documentation)
 - [x] [WebSocket](https://min-api.cryptocompare.com/documentation/websockets)
+
+## Modules
+
+### App
+
+Main purpose is to `startKoin` because app module implementing other three modules, so its the best place to `startKoi`n that covered the whole app
+
+### BuildSrc
+
+BuildSrc is the module to maintain the dependencies of third party library for app to use. It contains list of dependencies and version of that dependencies.
+
+### Data
+
+Handle communications to remote data. In this app case is to call API both for REST and WebSocket
+
+### Domain
+
+Contain use case and became the mediator to transfer data from Data layer to Presentation layer
+
+### Presentation
+
+This layer responsiblity is to handle UI and business logic. I put the MVVM design pattern implementation here. The module only know about Domain module.
