@@ -6,8 +6,9 @@ dependencies {
     implementation project(Dependencies.Module.domain)
 
     //Unit Testing
-    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.mockk
     testImplementation Dependencies.Test.test_junit
+    testImplementation Dependencies.Test.coroutine
 
     //Coroutine
     implementation Dependencies.Coroutine.coroutine

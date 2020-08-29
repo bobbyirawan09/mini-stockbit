@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.afollestad:vvalidator:0.5.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d71a68b8dbec3c95bd9fb4309ecaf79/jetified-vvalidator-0.5.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2d71a68b8dbec3c95bd9fb4309ecaf79/jetified-vvalidator-0.5.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e28023abb60acd2de3d7b4b1312f7b78/jetified-vvalidator-0.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e28023abb60acd2de3d7b4b1312f7b78/jetified-vvalidator-0.5.2/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad/vvalidator/0.5.2/dc9db5b10b697f4be8bbf142cbe456b3e6fbf01e/vvalidator-0.5.2-javadoc.jar!/" />

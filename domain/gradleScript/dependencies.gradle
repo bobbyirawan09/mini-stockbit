@@ -3,8 +3,9 @@ import dependencies.Dependencies
 dependencies {
 
     //Unit Testing
-    testImplementation Dependencies.Test.mockito
+    testImplementation Dependencies.Test.mockk
     testImplementation Dependencies.Test.test_junit
+    testImplementation Dependencies.Test.coroutine
 
     //Koin
     implementation Dependencies.Koin.koin
