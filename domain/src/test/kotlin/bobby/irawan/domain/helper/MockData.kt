@@ -11,6 +11,7 @@ import bobby.irawan.ministockbit.domain.model.WebSocketModel
 object MockData {
 
     val webSocketModel = WebSocketModel(21, "BTC", 1000.0)
+    val errorWebSocketModel = WebSocketModel(0, "", 0.0)
 
     val request = CryptoRequest(1)
     val cryptoModel = CryptoModel(
