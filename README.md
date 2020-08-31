@@ -5,6 +5,16 @@
 
 Project to replicate Stockbit app, although its a mini size of that app. Some cool tech stack I'm using in this project is Scarlet, Modularization, Navigation Component, etc. Not to forget, I also adding Unit Test for each layer.
 
+## Preview
+
+### Screenshot
+
+<p align="left">
+  <img src="images/login_page.jpg" width="270" alt="Login">
+  <img src="images/watch_list_page.jpg" width="270" alt="Watch List">
+  <img src="images/data_feed_page.jpg" width="270" alt="Data Feed">
+</p>
+
 ## Tech Stack
 
 ### Architecture
@@ -25,7 +35,7 @@ Inspired by [Android Clean Architecture](https://github.com/happysingh23828/Andr
 - [x] [Coroutines](https://developer.android.com/topic/libraries/architecture/coroutines)
 - [x] [Retrofit](https://square.github.io/retrofit/): Networking
 - [x] [View Binding](https://developer.android.com/topic/libraries/view-binding)
-- [x] [Koin](https://start.insert-koin.io/#/quickstart/kotlin): Dependency Injection / Service Locator]
+- [x] [Koin](https://start.insert-koin.io/#/quickstart/kotlin): Dependency Injection / Service Locator
 - [x] [Jetpack Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
 - [x] [Scarlet](https://github.com/Tinder/Scarlet): WebSocket client
 
